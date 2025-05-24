@@ -6,6 +6,7 @@ if (empty($_SESSION['usuario'])) {
     exit();
 }
 
+$cor = '#eee';
 if (!empty($_COOKIE['tema'])) {
     $tema = $_COOKIE['tema'];
 
@@ -28,7 +29,12 @@ if (!empty($_COOKIE['tema'])) {
 
 </head>
 
-<body style="background-color:<?php $cor; ?>">
+<body>
+    <style>
+        body {
+            background-color:<?php echo $cor; ?>
+        }
+    </style>
 
     <?php
     echo 'Bem-vindo ' . $_SESSION['usuario'];
