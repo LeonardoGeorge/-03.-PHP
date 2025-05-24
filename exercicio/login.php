@@ -3,10 +3,13 @@
 
     if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
         $usuario = htmlspecialchars($_POST['usuario']);
-        $senha = htmlspecialchars($_POST['usuario']);
+    $senha = htmlspecialchars($_POST['password']);
         
-        if ($usuario == 'admin' && $senha == 'admin') {
+        if ($usuario == 'Leonardo' && $senha == '2501') {
             $_SESSION['usuario'] = $usuario;
+            if (empty($_POST['tema'])){
+                setcookie('tema', htmlspecialchars($_POST['tema']));
+            }
 
             header('Location: welcome.php');
         } else {

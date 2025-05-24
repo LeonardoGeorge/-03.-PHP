@@ -2,17 +2,40 @@
 session_start();
 
 if (empty($_SESSION['usuario'])) {
-    header('Location: login.php');
+    header('Location: index.php');
     exit();
 }
 
-echo 'Bem-vindo ' . $_SESSION['usuario'];
-echo '<br>';
-echo '<a href="logout.ph">Sair</a>';
+if (!empty($_COOKIE['tema'])) {
+    $tema = $_COOKIE['tema'];
 
-/**
- * Deve exibir "Bem vindo [LOGIN DO USUARIO] se ele estiver logado".
- * Deve ter a opção de sair.
- * 
- */
+    if ($tema == 'escuro') {
+        $cor = '#444';
+    } else {
+        $cor = '#fff';
+    }
+}
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Secreta</title>
+
+</head>
+
+<body style="background-color:<?php $cor; ?>">
+
+    <?php
+    echo 'Bem-vindo ' . $_SESSION['usuario'];
+    echo '<br>';
+    echo '<a href="logout.php">Sair</a>';
+    ?>
+
+</body>
+
+</html>
