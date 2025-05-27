@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="CSS">CSS</option>
             <option value="JavaScript">JavaScript</option>
             <option value="Python">Python</option>
-
             <input type="submit">
         </select>
+
     </form>
 </body>
 
