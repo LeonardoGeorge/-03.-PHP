@@ -1,8 +1,20 @@
 <?php
+$tecnologias = ['PHP', 'HTML', 'CSS', 'JavaScript', 'Python'];
+
+$opcoesValidas = ['PHP', 'JavaScript', 'Python'];
+
+$erro = null;
+$sucesso = null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $option = $_POST['options'];
-    echo $option;
+
+    if (count($option) == 2) {
+       echo $option;
+    } else {
+        $erro = 'Selecione duas tecnologias';
+        echo $erro;
+    }
 }
 
 
@@ -19,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Selecionar Linguagem</h1>
     <form method="POST">
-        <select name="options">
+        <select name="options[]" multiple>
             <option value="PHP">PHP</option>
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
