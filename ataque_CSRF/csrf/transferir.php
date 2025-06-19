@@ -12,3 +12,4 @@ $valor = $_GET['valor'];
 $_SESSION['saldo'] -= $valor;
 echo "Olá, " . $_SESSION['user'] . ". Transferência de R$ $valor para a conta $contaDestino realizada com sucesso.";
 echo '<br /> Seu novo saldo é: ' . $_SESSION['saldo'];
+?>

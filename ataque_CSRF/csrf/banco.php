@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="http://127.0.0.1/curso-php/modulo3/formularios/csrf/transferir.php" method="GET">
+    <form action="http://localhost/%2303.%20PHP/ataque_CSRF/csrf/transferir.php" method="GET">
         <label for="conta_destino">Conta Destino:</label>
         <input type="text" name="conta_destino" id="conta_destino" value="12345">
         <label for="valor">Valor:</label>
