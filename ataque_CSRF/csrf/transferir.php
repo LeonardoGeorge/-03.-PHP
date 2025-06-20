@@ -6,9 +6,7 @@ if (empty($_SESSION['user'])) {
 }
 
 $csrf = $_SESSION['csrf_token'];
-var_dump($csrf);
-die();
-if ($_GET['csrf_token'] !== $csrf) {
+if ($_GET['csrf_token'] != $csrf) {
     die('Token CSRF inválido');
 }
 
